@@ -70,3 +70,46 @@ These are proposed workflow specifications, not workflows activated in HubSpot. 
 - Do not use academic simulation fields as factual behavioral evidence.
 - Test with internal contacts and preview records before activating.
 - Maintain a human review step for B2B commercial follow-up.
+
+
+---
+
+## Implementation status — 2 November 2026
+
+### Email visuals
+All 20 HubSpot draft emails now include a hero image loaded from the public GitHub repository. The 9 source images are reused by matching audience/sector:
+- B2C: Luxury Experience Seeker, Budget Optimizer, Business Traveler, Family Trip Planner, Spontaneous Explorer.
+- B2B: Hotel & Resort Partners, Guesthouses & Property Managers, Travel Agencies & Tour Operators, Activities, Experiences & Leisure Providers.
+
+All 20 email previews were rendered successfully and verified to contain a GitHub-hosted image URL. The emails remain drafts.
+
+### Existing recipient segments and batch-email targeting
+The following assignments were made to the 13 BATCH emails. Assignments are audience targeting only; they do not send emails.
+
+| BATCH email | Included recipients |
+|---|---|
+| Your Next Destination Awaits | Destination – Europe (list 20) + Destination – Southeast Asia (list 21) |
+| Welcome to Your Travel Journey | 15 existing B2C contact records (individual CRM IDs) |
+| Your Travel Memories | Previous Customers (list 18) |
+| The Perfect Seasonal Escape | Destination – Europe (list 20) + Destination – Southeast Asia (list 21) |
+| We Miss Your Travel Spirit | Re-engagement – 180+ Days (list 19; currently 0 members) |
+| Welcome to Your Partner Journey | B2B – Tous les comptes (list 26) |
+| Make Your Property Stand Out | B2B – Tous les comptes (list 26) |
+| Your Property Performance at a Glance | B2B – Clients acquis (list 31) |
+| Get Ready for the Next Travel Season | B2B – Tous les comptes (list 26) |
+| More Visibility. More Opportunities. | B2B – Tous les comptes (list 26) |
+| Let's Improve Your Guest Experience | B2B – Clients acquis (list 31) |
+| Your Next Business Opportunity | B2B – Haute priorité (list 28) + B2B – Opportunités ouvertes (list 29) |
+| We'd Love to See You Back | No recipient list assigned: no verified inactive-partner segment exists |
+
+### Eligibility and data-quality constraints
+- Contact search returned no values for `hs_marketable_status`, `hs_email_optout` and `hs_email_quarantined` on the existing academic contacts. Their marketing eligibility/consent cannot therefore be confirmed from the current records.
+- Do not schedule or send the BATCH emails until marketing status, subscription consent, suppression and deliverability are validated in HubSpot.
+- The B2C re-engagement segment (list 19) currently has zero members. No inactivity-based send should occur.
+- No reliable new-signup event/property was verified for B2C onboarding.
+- The post-stay campaign must be held until a completed stay is verified from a connected source; the existing Previous Customers segment is based on associated deal fields, not a confirmed completed-stay event.
+- No reliable inactive-partner segment or partner-activity trigger was verified.
+- Property performance, guest feedback, availability and search history are not connected data sources in this academic portal. Emails avoid fabricated metrics and behavior claims.
+
+### Workflow build status
+The 7 AUTOMATED email drafts exist and include their relevant images. However, the connected HubSpot integration exposes no workflow create/edit/activate operation. Consequently, the 7 HubSpot workflows have **not** been created, configured, or activated. The specifications above are implementation instructions for the HubSpot Workflows UI, not proof of live automations.
